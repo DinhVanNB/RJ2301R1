@@ -31,8 +31,18 @@ displayImage = (imageData) => {
    let dataUrl = imageData.map(img => 
         img.images.fixed_height.url
     )
-    for(let i =0; i<10;i++){
-        $('root').innerHTML += `<img class="img-thumbnail mx-1 mb-2"
-        // src="${dataUrl[i]}" >`
+    if(dataUrl.length>10){
+        for(let i =0; i<10;i++){
+            $('root').innerHTML += `<img class="img-thumbnail mx-1 mb-2"
+            // src="${dataUrl[i]}" >`
+        }
     }
+    else
+        {
+            for(let i =0; i<dataUrl.length;i++){
+                $('root').innerHTML += `<img width="200px" height="200px"  class="img-thumbnail mx-1 mb-2"
+                // src="${dataUrl[i]}" >`
+            }
+        }
+    
 }
