@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            let setListAnimal = new Set([
+                "Chim",
+                "Chuột",
+                "Chó",
+                "Mèo",
+                "Lợn",
+                "Gà"
+            ]);
+            addAnimal = nameAnimal => {
+                setListAnimal.add(nameAnimal);
+                console.log(`Thêm thành công ${nameAnimal}`);
+            }
+
+            checkExsit = nameAnimal => {
+                console.log(setListAnimal.has(nameAnimal)
+                    ? `${nameAnimal} đã có trong danh sách`
+                    : `${nameAnimal} chưa có tên trong danh sách`);
+            }
+
+            removeAnimal=nameAnimal=>{
+                console.log(setListAnimal.delete(nameAnimal)
+                ? `${nameAnimal} đã xóa khỏi danh sách`
+                    : `${nameAnimal} chưa có trong danh sách để xóa`);
+            }
+            
+            printListAnimal=()=>{
+                console.log('Danh sách các loại động vật trong danh sách:');
+                // for(const animal of setListAnimal.values()){
+                //     console.log(animal);
+                // }
+                [...setListAnimal].map(animal=>{
+                    console.log(animal)
+                })
+            }
+            addAnimal('Hổ');
+            checkExsit('Hổ');
+            removeAnimal('Hổ');
+            printListAnimal();
+        </script>
+    </body>
+</html>
